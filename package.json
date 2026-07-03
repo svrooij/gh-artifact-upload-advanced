@@ -19,9 +19,6 @@
     "url": "https://github.com/svrooij/gh-artifact-upload-advanced/issues"
   },
   "homepage": "https://github.com/svrooij/gh-artifact-upload-advanced#readme",
-  "dependencies": {
-    "@actions/core": "^3.0.1"
-  },
   "devDependencies": {
     "esbuild": "^0.28.1"
   }

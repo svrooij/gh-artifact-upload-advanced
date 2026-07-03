@@ -1,4 +1,4 @@
-import * as core from '@actions/core';
+import * as core from './core.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
