@@ -1,0 +1,49 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm test
+
+  smoke-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm ci && npm run build
+      - name: Create report file
+        run: |
+          mkdir -p reports
+          cat <<'HTML' > reports/report.html
+          <!doctype html>
+          <html><body><h1>Hello artifact</h1></body></html>
+          HTML
+      - name: Upload report
+        id: upload
+        uses: ./
+        with:
+          file: reports/report.html
+          mime-type: text/html
+          artifact-name: report.html
+      - name: Validate output
+        run: |
+          test -n "${{ steps.upload.outputs.artifact-url }}"
+          echo "Artifact URL: ${{ steps.upload.outputs.artifact-url }}"

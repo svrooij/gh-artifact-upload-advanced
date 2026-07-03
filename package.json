@@ -1,0 +1,25 @@
+{
+  "name": "gh-artifact-upload-advanced",
+  "version": "1.0.0",
+  "description": "A GitHub Action that allows uploading a single file and set its mime type for direct downloads",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild index.js --bundle --platform=node --target=node24 --format=esm --outfile=dist/index.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svrooij/gh-artifact-upload-advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svrooij/gh-artifact-upload-advanced/issues"
+  },
+  "homepage": "https://github.com/svrooij/gh-artifact-upload-advanced#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

@@ -1,0 +1,22 @@
+name: Upload Artifact Advanced
+description: Upload a single file as a raw artifact with a custom MIME type and return its absolute URL.
+author: Stephan van Rooij
+inputs:
+  file:
+    description: Path to the file to upload (must be inside the workspace).
+    required: true
+  mime-type:
+    description: MIME type used for the uploaded artifact.
+    required: true
+  artifact-name:
+    description: Artifact name (including extension).
+    required: true
+outputs:
+  artifact-url:
+    description: Absolute URL to the uploaded artifact in the current workflow run.
+runs:
+  using: node24
+  main: dist/index.js
+branding:
+  icon: upload-cloud
+  color: blue
