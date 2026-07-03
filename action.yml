@@ -1,6 +1,6 @@
 name: Upload Artifact Advanced
 description: Upload a single file as a raw artifact with a custom MIME type and return its absolute URL.
-author: Sven Rooijackers
+author: Stephan van Rooij
 inputs:
   file:
     description: Path to the file to upload (must be inside the workspace).
