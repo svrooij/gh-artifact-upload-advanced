@@ -15,7 +15,7 @@ outputs:
   artifact-url:
     description: Absolute URL to the uploaded artifact in the current workflow run.
 runs:
-  using: node22
+  using: node24
   main: index.js
 branding:
   icon: upload-cloud
